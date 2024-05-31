@@ -8,7 +8,7 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for=”item in todoList” :class="(item.done === true)? 'done': ''">
+            <li v-for="(item, index) in todoList" :key="index" :class="(item.done === true)? 'done': ''" @click="invertDone(index)">
                 {{item.name}}
             </li>
         </ul>

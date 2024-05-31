@@ -34,5 +34,10 @@ createApp ({
                 },
             ]
         }
+    },
+    methods: {
+        invertDone : function(itemIndex){
+            this.toDoList[itemIndex].done = !this.toDoList[itemIndex].done
+        } 
     }
 }).mount('#app')
