@@ -38,6 +38,15 @@ createApp ({
     methods: {
         invertDone : function(itemIndex){
             this.toDoList[itemIndex].done = !this.toDoList[itemIndex].done
-        } 
+        } ,
+
+        addNewTask : function(){
+            const newTask = {
+                nome: newContent,
+                done: false,
+            }
+
+            this.toDoList.push(newTask)
+        }
     }
 }).mount('#app')

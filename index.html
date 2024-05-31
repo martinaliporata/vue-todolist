@@ -7,11 +7,17 @@
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="(item, index) in todoList" :key="index" :class="(item.done === true)? 'done': ''" @click="invertDone(index)">
-                {{item.name}}
-            </li>
-        </ul>
+        <div class="list">
+            <ul>
+                <li v-for="(item, index) in todoList" :key="index" :class="(item.done === true)? 'done': ''" @click="invertDone(index)">
+                    {{item.name}}
+                </li>
+            </ul>
+        </div>
+        <div class="userInput">
+            <label for="new-item">Add new task</label>
+            <input type="text" id="new-item" v-model="newTaskContent" @keyup.enter="addNewTask()">
+        </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
