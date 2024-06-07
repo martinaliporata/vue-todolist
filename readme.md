@@ -4,17 +4,17 @@ Ogni oggetto dovra' avere almeno due proprietà:
 text, una stringa che indica il testo del todo
 done, un booleano (true/false) che indica se il todo è stato fatto oppure no
 MILESTONE 1
-Stampare all'interno di una lista HTML un item per ogni todo.
+Stampare all'interno di una lista HTML un item per ogni todo. FATTO
 Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 MILESTONE 2
 Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 MILESTONE 3
-Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante o premendo il tasto invio, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante o premendo il tasto invio, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti. FATTO
 
 
 
 Creo il collegamento con vue con createApp
-All’interno del return data creo un array di oggetti (con nome, done false (done è far sì che se un elemento lo clicchiamo, sbarra il testo)
+All’interno del return data creo un array di oggetti con nome, done false (done è far sì che se un elemento lo clicchiamo, sbarra il testo)
 Creo un v-for per inserire i li all’interno dell’ul (v-for=”item in todoList”)
 Per quanto concerne i metodi, ne aggiungo uno che mostri se il done è true o false (sbarrato o no)
 Come mostro l'elemento sbarrato con done true? Classe css con vbind al li 
@@ -24,5 +24,7 @@ Aggiungo click con toggleDone con l’index
 Creo un input tale per cui se scrivo un nuovo elemento, questo si aggiunge alla lista.
 Creo una funzione che aggiunge un task facendo un push
 Quando inserisco elementi in struttura dati esistenti, devo travestire il nuovo dato come fosse un dato esistente () quindi creo una funzione per crearlo 
-Lo posso collegare con v-model i cui mi collego a un input e se la variabile cambia l’input e viceversa.
+Lo posso collegare con v-model: mi collego a un input e se la variabile cambia, cambia anche l’input (e viceversa).
 Aggiunge keyup.enter per far sì che all’invio dell’utente si agginga il task
+
+Per rimuovere un task creo una funzione; devo rimuovere con splice(da dove inizia, quanti ne devo rimuovere e se voglio aggiungere qualcuno). Lo rimuovo quando schiaccio su una x che inserisco nel ciclo v-for.

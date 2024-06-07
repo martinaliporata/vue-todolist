@@ -5,48 +5,55 @@ createApp ({
         return {
             toDoList: [
                 {
-                    name: 'patate',
-                    done: false,
+                    text: 'patate',
+                    done: true
                 },
                 {
-                    name: 'cipolle',
-                    done: false,
+                    text: 'cipolle',
+                    done: false
                 },
                 {
-                    name: 'zucchine',
-                    done: false,
+                    text: 'zucchine',
+                    done: false
                 },
                 {
-                    name: 'melanzane',
-                    done: false,
+                    text: 'melanzane',
+                    done: true
                 },
                 {
-                    name: 'vino',
-                    done: false,
+                    text: 'vino',
+                    done: false
                 },
                 {
-                    name: 'torta',
-                    done: false,
+                    text: 'torta',
+                    done: false
                 },
                 {
-                    name: 'latte',
-                    done: false,
+                    text: 'latte',
+                    done: true
                 },
-            ]
+            ],
+            newTaskContent: '',
         }
     },
+    // non ho capito
     methods: {
         invertDone : function(itemIndex){
-            this.toDoList[itemIndex].done = !this.toDoList[itemIndex].done
-        } ,
+            this.toDoList[itemIndex].done = !this.toDoList[itemIndex].done;
+        },
 
-        addNewTask : function(){
+        addNewTask : function(newContent){
+            // const prova = this.newTaskContent;
+            // console.log(this.newTaskContent)
             const newTask = {
-                nome: newContent,
+                text: newContent,
                 done: false,
             }
-
             this.toDoList.push(newTask)
+        },
+
+        deleteItem : function(){
+
         }
     }
 }).mount('#app')

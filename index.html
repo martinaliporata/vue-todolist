@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TodoList Vue</title>
 </head>
 <body>
     <div id="app">
-        <div class="list">
+        <div class="lista">
+            <h1>
+                To do list
+            </h1>
             <ul>
-                <li v-for="(item, index) in todoList" :key="index" :class="(item.done === true)? 'done': ''" @click="invertDone(index)">
-                    {{item.name}}
+                <li class="list-item" v-for="(item, index) in toDoList"
+                :key="index" 
+                :class="(item.done === true) ? 'done': ''"
+                @click="invertDone(index)">
+                    {{item.text}}
                 </li>
             </ul>
         </div>
+        <div>
+            <button @click="deleteItem">
+                Premimi per cancellare
+            </button>
+        </div>
         <div class="userInput">
-            <label for="new-item">Add new task</label>
-            <input type="text" id="new-item" v-model="newTaskContent" @keyup.enter="addNewTask()">
+            <label for="new-todo-input">Add new task</label>
+            <input type="text" id="new-todo-input" v-model="newTaskContent" 
+            @keyup.enter="addNewTask(newTaskContent)">
         </div>
     </div>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
 </body>
