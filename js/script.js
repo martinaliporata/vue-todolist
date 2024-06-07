@@ -36,15 +36,12 @@ createApp ({
             newTaskContent: '',
         }
     },
-    // non ho capito
     methods: {
         invertDone : function(itemIndex){
             this.toDoList[itemIndex].done = !this.toDoList[itemIndex].done;
         },
 
         addNewTask : function(newContent){
-            // const prova = this.newTaskContent;
-            // console.log(this.newTaskContent)
             const newTask = {
                 text: newContent,
                 done: false,
@@ -52,8 +49,8 @@ createApp ({
             this.toDoList.push(newTask)
         },
 
-        deleteItem : function(){
-
+        deleteItem : function(taskIndex){
+            this.toDoList.splice(taskIndex, 1);
         }
     }
 }).mount('#app')

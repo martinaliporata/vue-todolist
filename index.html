@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TodoList Vue</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div id="app">
@@ -16,14 +17,15 @@
                 :key="index" 
                 :class="(item.done === true) ? 'done': ''"
                 @click="invertDone(index)">
-                    {{item.text}}
+                    <span>{{item.text}}</span>
+                    <button @click="deleteItem">
+                        Premimi per cancellare
+                    </button>
                 </li>
             </ul>
         </div>
         <div>
-            <button @click="deleteItem">
-                Premimi per cancellare
-            </button>
+            
         </div>
         <div class="userInput">
             <label for="new-todo-input">Add new task</label>
